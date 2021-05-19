@@ -14,7 +14,7 @@ app.use(express.json());
 
 // make the server listen to HTTP calls (HTTP requests) from clients
 // => give it a door (i.e a PORT)
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server started and listening on port: ${PORT}`);
 });
