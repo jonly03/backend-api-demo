@@ -4,6 +4,7 @@ let { destinations } = require("./db");
 // import (require) express function
 const express = require("express");
 const fetch = require("node-fetch");
+const cors = require("cors");
 require("dotenv").config();
 
 const { uid } = require("./services");
@@ -11,7 +12,7 @@ const { uid } = require("./services");
 // call the express function to create our HTTP server
 // => the created server is "deaf"
 const app = express();
-
+app.use(cors());
 app.use(express.json());
 
 // make the server listen to HTTP calls (HTTP requests) from clients
